@@ -1,0 +1,34 @@
+resources:
+  - type: Microsoft.Storage/storageAccounts
+    name: myblobstorage
+    apiVersion: 2021-04-01
+    location: eastus
+    properties:
+      accessTier: Cool
+      supportsHttpsTrafficOnly: true
+      enableHttpsTrafficOnly: true
+      enableBlobEncryption: true
+      networkAcls:
+        defaultAction: Deny
+        bypass: None
+        virtualNetworkRules: []
+        ipRules: []
+        virtualNetworkSubnetId: ""
+        azureFilesIdentityBasedAuthentication: false
+      minimumTlsVersion: TLS1_2
+      allowBlobPublicAccess: false
+      allowSharedKeyAccess: false
+      allowSharedAccessSignatureAccess: false
+      allowFileServiceAccess: false
+      allowQueueServiceAccess: false
+      allowTableServiceAccess: false
+      allowBlobServiceAccess: true
+      allowContainerDelete: false
+      allowContainerList: true
+      allowContainerRead: true
+      allowContainerWrite: true
+      allowObjectDelete: false
+      allowObjectRead: true
+      allowObjectWrite: true
+      enableAzureActiveDirectoryDomainServicesForFile: false
+      allowSharedAccessSignatureAccess: false
