@@ -38,9 +38,10 @@ for f in files:
     with open(f) as fp:
         file_content = fp.read()
 
+    if file_content == "":
+        continue
     out = complianceCheck(file_content)
 
     print(out["choices"][0]["message"]["content"])
-    break
 
 
