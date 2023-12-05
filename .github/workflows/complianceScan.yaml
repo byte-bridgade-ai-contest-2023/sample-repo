@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Run Byte Brigade Compliance Checker
     steps:
+      - name: Check me out!
+        uses: actions/checkout@v4
       - name: Byte Brigade Compliance Check
         uses: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action@v0.1
         with:
