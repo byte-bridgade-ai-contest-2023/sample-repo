@@ -40,7 +40,6 @@ for f in files:
 
     out = complianceCheck(file_content)
 
-    print(out)
     print(out["choices"][0]["message"]["content"])
     break
 
