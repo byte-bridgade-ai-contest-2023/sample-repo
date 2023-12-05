@@ -32,7 +32,7 @@ import glob
 
 files = glob.glob("**/*yaml")
 
-print(":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:")
+print(":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:")
 print("")
 for f in files:
     print()
@@ -52,7 +52,7 @@ for f in files:
 #import re
 #escaped = re.escape(s)
 print("")
-print(":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:")
+print(":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:")
 
 
 #print(f'::set-output name=result::{s}')
