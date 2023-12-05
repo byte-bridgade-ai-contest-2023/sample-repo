@@ -28,4 +28,4 @@ jobs:
         uses: KeisukeYamashita/create-comment@v1
         with:
           comment: |
-            $ {{ env.response }}
+            ${{ env.response }}
