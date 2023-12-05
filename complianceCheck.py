@@ -32,9 +32,9 @@ import glob
 
 files = glob.glob("**/*yaml")
 
-s = ""
+s = ":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:"
 for f in files:
-    s += f"file: {f}"
+    s += f"file: {f}\n"
     file_content = ""
     with open(f) as fp:
         file_content = fp.read()
@@ -48,6 +48,7 @@ for f in files:
 
 #import re
 #escaped = re.escape(s)
+s += ":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:"
 print(s)
 
 
