@@ -2,6 +2,8 @@ on: [pull_request]
 
 name: Compliance Scan
 
+permissions: write-all
+
 jobs:
   codeguard:
     runs-on: ubuntu-latest
