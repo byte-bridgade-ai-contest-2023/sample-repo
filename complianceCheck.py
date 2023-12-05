@@ -32,9 +32,10 @@ import glob
 
 files = glob.glob("**/*yaml")
 
-s = ":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:"
+print(":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:")
+print("")
 for f in files:
-    s += f"file: {f}\n"
+    print(f"file: {f}")
     file_content = ""
     with open(f) as fp:
         file_content = fp.read()
@@ -43,13 +44,13 @@ for f in files:
         continue
     out = complianceCheck(file_content)
 
-    s += out["choices"][0]["message"]["content"]
+    print(out["choices"][0]["message"]["content"])
 
 
 #import re
 #escaped = re.escape(s)
-s += ":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:"
-print(s)
+print("")
+print(":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:")
 
 
 #print(f'::set-output name=result::{s}')
