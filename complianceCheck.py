@@ -11,7 +11,7 @@ def complianceCheck(file_content):
     openai.api_version = "2023-07-01-preview"
     openai.api_key = "333ee4ac595d44978d37e81b2eb063c2"
 
-    message_text = [{"role":"system","content":"You are a PCI compliance checker. You will take in infrastructure as code (IaC) files and return whether the code file is PCI compliant. If not PCI complaint indicate why and provide a recommendation to resolve the issue."},{"role":"user","content": file_content}]
+    message_text = [{"role":"system","content":"You are a PCI compliance checker. You will take in infrastructure as code (IaC) files and return whether the code file is PCI compliant. If not PCI complaint indicate why and provide a recommendation to resolve the issue. Ensure any special characters are escaped in your response."},{"role":"user","content": file_content}]
 
     completion = openai.ChatCompletion.create(
     engine="gpt-35-turbo",
