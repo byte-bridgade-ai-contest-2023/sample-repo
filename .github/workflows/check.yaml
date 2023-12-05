@@ -24,13 +24,8 @@ jobs:
           echo "$response" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
         id: check
-      - uses: actions/github-script@v3
+      - name: Post comment
+        uses: KeisukeYamashita/create-comment@v1
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          script: |
-            github.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: "${{ env.response }}"
-            })
+          comment: |
+            $ {{ env.response }}
