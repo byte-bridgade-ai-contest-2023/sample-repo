@@ -19,11 +19,14 @@ jobs:
 
       - name: execute py script # run main.py
         run: |
-          echo response=$(python complianceCheck.py) >> $GITHUB_OUTPUT
+          response=$(python complianceCheck.py)
+          echo "response<<EOF" >> $GITHUB_ENV
+          echo "$response" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
         id: check
       - name: test
         run: |
-          echo ${{ needs.check.outputs.response }}
+          echo ${{ env.response }}
       - uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -32,5 +35,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '${{ needs.check.outputs.response }}'
+              body: '${{ env.response }}'
             })
