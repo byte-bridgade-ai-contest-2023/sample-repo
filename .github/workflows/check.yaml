@@ -21,6 +21,7 @@ jobs:
         run: |
           output=$(python complianceCheck.py)
           echo "::set-output name=result::$output"
+        id: check
       - uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
@@ -29,5 +30,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '${{ steps.step1.outputs.result }}'
+              body: '${{ steps.check.outputs.result }}'
             })
