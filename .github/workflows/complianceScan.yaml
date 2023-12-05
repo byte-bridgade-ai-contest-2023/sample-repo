@@ -13,6 +13,7 @@ jobs:
         uses: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action@HEAD
         with:
           number: ${{ github.event.pull_request.number }}
+          token: ${{ secrets.ORG_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CHATGPT_AUTH_TOKEN: ${{ secrets.API_KEY }}
