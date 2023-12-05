@@ -9,14 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Run Byte Brigade Compliance Checker
     steps:
-      - name: Check me out!
-        uses: actions/checkout@v4
-        with:
-          repository: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action
-          branch: main
-          path: ./Compliance-GitHub-Action
       - name: Byte Brigade Compliance Check
-        uses: ./Compliance-GitHub-Action
+        uses: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action@main
         with:
           number: ${{ github.event.pull_request.number }}
           token: ${{ secrets.ORG_TOKEN }}
