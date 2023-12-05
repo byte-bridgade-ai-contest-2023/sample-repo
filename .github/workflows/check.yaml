@@ -19,9 +19,11 @@ jobs:
 
       - name: execute py script # run main.py
         run: |
-          echo 'RESPONSE<<EOF' >> $GITHUB_ENV
-          python complianceCheck.py >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
+          {
+            echo 'RESPONSE<<EOF'
+            python complianceCheck.py
+            echo EOF
+          } >> $GITHUB_ENV
         id: check
       - uses: actions/github-script@v3
         with:
