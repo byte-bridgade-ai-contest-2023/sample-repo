@@ -32,8 +32,8 @@ import glob
 
 files = glob.glob("**/*yaml")
 
+s = ""
 for f in files:
-    print(f)
     file_content = ""
     with open(f) as fp:
         file_content = fp.read()
@@ -42,6 +42,8 @@ for f in files:
         continue
     out = complianceCheck(file_content)
 
-    print(out["choices"][0]["message"]["content"])
+    s += out["choices"][0]["message"]["content"]
+
+print(f'::set-output name=result::{s}')
 
 

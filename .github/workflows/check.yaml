@@ -19,8 +19,7 @@ jobs:
 
       - name: execute py script # run main.py
         run: |
-          output=$(python complianceCheck.py)
-          echo "::set-output name=result::$output"
+          python complianceCheck.py
         id: check
       - uses: actions/github-script@v3
         with:
