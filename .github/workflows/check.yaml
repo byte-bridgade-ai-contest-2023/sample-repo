@@ -24,9 +24,6 @@ jobs:
           echo "$response" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
         id: check
-      - name: test
-        run: |
-          echo ${{ env.response }}
       - uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
