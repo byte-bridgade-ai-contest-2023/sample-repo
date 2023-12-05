@@ -1,4 +1,4 @@
-name: Run Script
+name: Byte Brigade Compliance Scan
 
 on: [pull_request]
 
