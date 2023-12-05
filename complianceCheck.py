@@ -35,9 +35,9 @@ files = glob.glob("**/*yaml")
 print(":x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x::x:")
 print("")
 for f in files:
-    print("==============================================")
-    print(f)
-    print("==============================================")
+    print()
+    print(f"# {f}")
+    print()
     file_content = ""
     with open(f) as fp:
         file_content = fp.read()
