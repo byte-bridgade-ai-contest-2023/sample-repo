@@ -29,3 +29,4 @@ jobs:
         with:
           comment: |
             ${{ env.response }}
+      - run: exit 1
