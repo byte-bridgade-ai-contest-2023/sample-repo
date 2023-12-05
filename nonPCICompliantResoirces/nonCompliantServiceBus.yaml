@@ -1,0 +1,20 @@
+resources:
+  - type: Microsoft.ServiceBus/namespaces
+    name: mysbnamespace
+    apiVersion: 2021-06-01
+    location: eastus
+    sku:
+      name: Standard
+      tier: Standard
+    properties:
+      messagingSku: Standard
+      enablePartitioning: false
+      enableExpress: true
+      enableDeadLetteringOnMessageExpiration: false
+      enableBatchedOperations: true
+      enableDuplicateDetection: false
+      requiresDuplicateDetection: false
+      defaultMessageTimeToLive: PT1H
+      autoDeleteOnIdle: PT7D
+      enablePartitioning: false
+      enableExpress: true

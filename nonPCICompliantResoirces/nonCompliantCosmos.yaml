@@ -1,0 +1,17 @@
+resources:
+  - type: Microsoft.DocumentDB/databaseAccounts
+    name: mycosmosdb
+    apiVersion: 2021-03-15
+    location: eastus
+    properties:
+      consistencyPolicy:
+        defaultConsistencyLevel: Eventual
+      enableAutomaticFailover: false
+      enableMultipleWriteLocations: true
+      ipRangeFilter: ""
+      isVirtualNetworkFilterEnabled: false
+      virtualNetworkRules: []
+      enableAnalyticalStorage: true
+      enableAutomaticBackup: true
+      backupIntervalInMinutes: 60
+      backupRetentionIntervalInHours: 24
