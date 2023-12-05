@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action
+          branch: main
           path: ./Compliance-GitHub-Action
       - name: Byte Brigade Compliance Check
         uses: ./Compliance-GitHub-Action
