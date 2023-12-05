@@ -44,6 +44,7 @@ for f in files:
 
     s += out["choices"][0]["message"]["content"]
 
-print(f'::set-output name=result::{s}')
+print(s)
+#print(f'::set-output name=result::{s}')
 
 

@@ -19,7 +19,9 @@ jobs:
 
       - name: execute py script # run main.py
         run: |
-          python complianceCheck.py
+          echo 'RESPONSE<<EOF' >> $GITHUB_OUTPUT
+          python complianceCheck.py >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
         id: check
       - uses: actions/github-script@v3
         with:
@@ -29,5 +31,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '${{ steps.check.outputs.result }}'
+              body: '${{ env.RESPONSE }}'
             })
