@@ -10,7 +10,7 @@ jobs:
     name: Run Byte Brigade Compliance Checker
     steps:
       - name: Byte Brigade Compliance Check
-        uses: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action@HEAD
+        uses: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action
         with:
           number: ${{ github.event.pull_request.number }}
           token: ${{ secrets.ORG_TOKEN }}
