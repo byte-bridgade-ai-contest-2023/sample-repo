@@ -21,6 +21,10 @@ jobs:
         run: |
           echo response=$(python complianceCheck.py) >> $GITHUB_OUTPUT
         id: check
+      - name: execute py script
+        run: |
+          echo ${{ needs.check.outputs.response }}
+        id: check
       - uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
