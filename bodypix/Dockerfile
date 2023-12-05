@@ -8,6 +8,8 @@ RUN apt update && apt install -y curl make build-essential \
     && chmod 777 /.npm
 # Ensure we can get enough GPU memory
 # Unfortunately tfjs-node-gpu exposes no gpu configuration :(
+USER 1
+
 ENV TF_FORCE_GPU_ALLOW_GROWTH=true
 # Install node package dependencies
 WORKDIR /src
