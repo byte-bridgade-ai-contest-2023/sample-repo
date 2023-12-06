@@ -15,4 +15,4 @@ resources:
         virtualNetworkSubnetId: ""
         azureFilesIdentityBasedAuthentication: false
       minimumTlsVersion: TLS1_2
-      allowBlobPublicAccess: false
+      allowBlobPublicAccess: true
