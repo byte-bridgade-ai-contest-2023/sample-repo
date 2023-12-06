@@ -19,3 +19,4 @@ jobs:
           API_ENDPOINT: $${{ secrets.API_ENDPOINT }}
           DEPLOYMENT_ID: $${{ secrets.DEPLOYMENT_ID }}
           COMMENT_BY_LINE: false
+          
