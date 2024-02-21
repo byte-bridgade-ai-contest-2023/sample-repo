@@ -10,13 +10,11 @@ jobs:
     name: Run Byte Brigade Compliance Checker
     steps:
       - name: Byte Brigade Compliance Check
-        uses: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action@main
+        uses: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action@fix-chatgpt-endpoint
         with:
           number: ${{ github.event.pull_request.number }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CHATGPT_AUTH_TOKEN: ${{ secrets.API_KEY }}
-          API_ENDPOINT: $${{ secrets.API_ENDPOINT }}
-          DEPLOYMENT_ID: $${{ secrets.DEPLOYMENT_ID }}
           COMMENT_BY_LINE: true
           
