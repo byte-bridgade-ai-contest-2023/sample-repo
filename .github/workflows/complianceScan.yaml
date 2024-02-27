@@ -10,7 +10,7 @@ jobs:
     name: Run Byte Brigade Compliance Checker
     steps:
       - name: Byte Brigade Compliance Check
-        uses: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action@fix-chatgpt-endpoint
+        uses: byte-bridgade-ai-contest-2023/Compliance-GitHub-Action@v1.0.0
         with:
           number: ${{ github.event.pull_request.number }}
         env:
@@ -18,3 +18,28 @@ jobs:
           CHATGPT_AUTH_TOKEN: ${{ secrets.API_KEY }}
           COMMENT_BY_LINE: true
           
+  # using Trent's python script to run the compliance check and post the results as a single comment
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-python@v4
+  #       with:
+  #         python-version: '3.x'
+  #     - name: install python packages
+  #       run: |
+  #         python -m pip install --upgrade pip
+  #         pip install openai==0.28
+  #     - name: execute py script # run main.py
+  #       run: |
+  #         response=$(python complianceCheck.py)
+  #         echo "response<<EOF" >> $GITHUB_ENV
+  #         echo "$response" >> $GITHUB_ENV
+  #         echo "EOF" >> $GITHUB_ENV
+  #       id: check
+  #     - name: Post comment
+  #       uses: KeisukeYamashita/create-comment@v1
+  #       with:
+  #         comment: |
+  #           ${{ env.response }}
+  #     - run: exit 1
